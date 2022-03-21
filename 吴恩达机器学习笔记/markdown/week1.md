@@ -20,7 +20,11 @@
 
 ​	**Classification**:Discrete valued output(0 or 1)
 
-### Linear regression
+## Unsupervised learning 无监督学习
+
+​	clustering 聚类...
+
+# Linear regression
 
 ​	m = Number of training examples
 
@@ -28,31 +32,79 @@
 
 ​	y = "output" variable/"target"variable
 
-+ supervised learning work struction:
+#### supervised learning work struction:
 
-  ![image-20220310232702177](assets/image-20220310232702177.png)
+![image-20220310232702177](assets/image-20220310232702177.png)
 
-  another name: univariate linear regeression  $h_θ(x)=θ_0 +θ_1x$
+another name: univariate linear regeression(*一元线性回归*)  $h_θ(x)=θ_0 +θ_1x$
 
-+  hyppothsis
-  
-  Goal:
-  $$
-  {minimize\atop θ_0, θ_1}\frac{1}{2m}\sum_{i= 1}^m(h_θ(x^{(i)}) - y^{(i)})^2
+## Cost Function
+
+####	Goal:
+
 $$
-  *tips:平方数学性质好，结果有正有负，平方导数处处存在*
+{minimize\atop θ_0, θ_1}\frac{1}{2m}\sum_{i= 1}^m(h_θ(x^{(i)}) - y^{(i)})^2
+$$
+​	*tips:平方数学性质好，结果有正有负，平方导数处处存在*
 
-  预测值和实际值得平方误差和
+​	预测值和实际值得平方误差和
 
-  *tips:这里的1/2m是为了开导 时刚好抵消平方，对优化结果来说无影响*
+​	*tips:这里的1/2m是为了开导 时刚好抵消平方，对优化结果来说无影响*
 
-  线性回归的整体目标函数
+​	线性回归的整体目标函数
 
-  cost function (squared error function) 代价函数 :$\frac{1}{2m}\sum_{i= 1}^m(h_θ(x^{(i)}) - y^{(i)})^2$
-  
-  
+####	cost function (squared error function) 代价函数 :
 
-## Unsupervised learning 无监督学习
+$J(θ_0,θ_1)= \frac{1}{2m}\sum_{i= 1}^m(h_θ(x^{(i)}) - y^{(i)})^2$
 
-​	clustering 聚类...
+​	simplified 只包含$θ_1$:
+
+​	$θ_1 = 1$
+
+![image-20220321232634936](assets/image-20220321232634936.png)
+
+​		$θ_1 = 0.5$
+
+![image-20220321232836993](assets/image-20220321232836993.png)
+
+​		*tips: 代价函数计算实际值与预测值差值的平方和*
+
+​		$θ_1 = 0$
+
+![image-20220321233249638](assets/image-20220321233249638.png)
+
+## Gradient descent
+
+​	gradient dessent for minimizing some arbitrary function J.
+
+​	Have some function $J(θ_0,θ_1,...)$ , Want ${minimize\atop θ_0, θ_1}J(θ_0,θ_1,...)$
+
+#### Outline:
+
++ Start with some $θ_0,θ_1$ *(A commom choice would be we set 0, 0)*
++ Keep changing $θ_0,θ_1$ to reduce $J(θ_0,θ_1)$ until we hopefully end up at a minimum.
+
+#### gradient descent algorithm:
+
+​	repeat until convergence*(收敛)*{
+
+$θ_j := θ_j-\alpha\frac{\partial}{\partial \theta_j}J(\theta_0,\theta_1) (for j = 0 and j = 1)$ 
+
+}
+
+$\alpha$ : learning rate 控制梯度下降时步伐的大小。
+
+*tips:for this update equation, you want to **simultaneously update** parameter*
+
+#### Correct: Simultaneous update
+
+$temp0 := θ_0-\alpha\frac{\partial}{\partial \theta_0}J(\theta_0,\theta_1)$
+
+$temp1 := θ_1-\alpha\frac{\partial}{\partial \theta_1}J(\theta_0,\theta_1)$
+
+$\theta_0 := temp0$
+
+$\theta_1:= temp1$
+
+it actually turns out to be more natural to implement the simultaneous update.
 
