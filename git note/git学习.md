@@ -23,3 +23,8 @@ git checkout -b <name>origin<template> 分支名  以那个分支为模板  加o
 git branch 查看所有分支
 
 git merge <branchName> 合并分支
+
+git remote add origin git@github.com:yourName/yourRepo.git 关联仓库
+
+git push origin main 把本地库的内容推送到远程库
+
