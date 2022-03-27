@@ -4,7 +4,7 @@
 
 :)
 
-## [introductioin](../吴恩达机器学习笔记/markdown/week1.md)
+## [introductioin](./吴恩达机器学习笔记/markdown/week1.md)
 
 
 
