@@ -4,7 +4,7 @@
 
 ## linear regression
 
-[course coding work]()
+[course coding work](./吴恩达机器学习笔记/code/linear regression/)
 
  [course note](./吴恩达机器学习笔记/markdown/linear regression.md)
 
