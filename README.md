@@ -1,10 +1,12 @@
 # note
 
-*This Book is property of the Half-Blood Prince*
+*This Book is property of the Half-Blood Prince*:)
 
-:)
+## linear regression
 
-## [introductioin](./吴恩达机器学习笔记/markdown/week1.md)
+[course coding work]()
+
+ [course note](./吴恩达机器学习笔记/markdown/linear regression.md)
 
 
 

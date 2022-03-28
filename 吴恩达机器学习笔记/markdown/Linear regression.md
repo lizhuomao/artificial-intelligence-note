@@ -108,3 +108,26 @@ $\theta_1:= temp1$
 
 it actually turns out to be more natural to implement the simultaneous update.
 
+导数项的意义：递增为正，递减为负
+
+![image-20220328214232779](assets/image-20220328214232779.png)
+
+​	if $\alpha$ is too small, gradient descent can be slow.
+
+​	if $\alpha$ is too large, gradient descent can overshoot the minimum. It may fail to converge, or even diverge.
+
+​	局部最优解local optima 斜率为0，导数项为0
+
+​	Gradient descent can converge to a local minimum, even with the learning rate $\alpha$ fixed.
+
+​	As we approach a local minimum, gradient desent will automatically take smaller steps. So, no need to decrease a over time.
+
+​	偏导数计算：
+
+![image-20220328220325773](assets/image-20220328220325773.png)
+
+"Batch" Gradient Descent
+
+"Batch": Each step of gradient descent uses all the training examples.
+
+*tips:相比于正规方程组法梯度下降更适用于更大的数据集*
