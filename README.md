@@ -2,13 +2,19 @@
 
 *This Book is property of the Half-Blood Prince*:)
 
-## linear regression
+For this note, it contains Professor Andrew Ng course notes and the code implementation of course assignments.
+
+## Linear Regression
+
+ [course note](./吴恩达机器学习笔记/markdown/Linear_regression.md)
 
 [course coding work](./吴恩达机器学习笔记/code/linear_regression/)
 
- [course note](./吴恩达机器学习笔记/markdown/linear_regression.md)
 
 
+## Logistic Regression
+
+[course note](./吴恩达机器学习笔记/markdown/Logistic_regression.md)
 
 
 
