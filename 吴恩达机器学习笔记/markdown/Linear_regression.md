@@ -220,6 +220,8 @@ What if $X^TX$ is non-invertible?
 
 不可逆的问题不会经常出现，编程库中通常使用的都是伪逆函数进行逆运算
 
+其中$X^TX$是为了保证逆为方阵
+
 $m$ trainning examples, $n$ features.
 
 Gradient Descent:
