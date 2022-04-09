@@ -9,26 +9,30 @@ def sigmoid(z):
 
 #hypothesis function
 def hypothesis(X, theta):
-   z = X.dot(theta)
-   return sigmoid(z)
+   return sigmoid(X.dot(theta))
 
 #cost function
 def cost(X, Y, theta):
     c_function = -Y.T.dot(np.log(hypothesis(X, theta))) - (1 - Y.T).dot(np.log(1 - hypothesis(X, theta)))
-    return 1 / X.shape[0] * c_function
+    return (1 / X.shape[0]) * c_function
 
 #gradient
 def gradient(X, Y, theta):
-    return (1 / X.shape[0]) * X.T.dot(hypothesis(X, theta) - Y)
+    return X.T.dot(hypothesis(X, theta) - Y) / X.shape[0]
 
 #logistic regression
-def logistic_regression(X, Y, theta, epoch, alpha=0.01):
+def batch_gradient_decent(X, Y, theta, epoch, alpha=0.01):
     cost_data = [cost(X, Y, theta)]
     _theta = theta.copy()
     for i in range(epoch):
-        _theta = -theta - gradient(X, Y, _theta)
-        cost_data.append(cost(X, Y, theta))
+        _theta = _theta - alpha * gradient(X, Y, _theta)
+        cost_data.append(cost(X, Y, _theta))
     return _theta, np.array(cost_data).reshape(len(cost_data), 1)
+
+def normalization_featrue(data):
+    for i in range(0, data.shape[1] - 1):
+        data.iloc[:, i] = (data.iloc[:, i] - data.iloc[:, i].mean()) / data.iloc[:, i].std()
+    return data
 
 #获取特征
 def get_X(data):
@@ -41,6 +45,8 @@ def get_Y(data):
 
 
 data = pd.read_csv('ex2data1.txt', names=['exam1 score', 'exam2 score', 'admission'])
+raw_data = data.copy()
+data = normalization_featrue(data)
 print(data.head())
 
 #1.1 Visualizing the data
@@ -56,17 +62,21 @@ Y = get_Y(data)
 theta = np.zeros(data.shape[1]).reshape(data.shape[1], 1)
 print(X.shape, Y.shape, theta.shape)
 
+
 #sigmoid(0) = 0.5
 print(hypothesis(X[1], theta))
 #plt.figure()
 #plt.plot(np.linspace((1, -1),))
 
 #cost function and gradient
-epoch=500
-final_theta, cost_data = logistic_regression(X, Y, theta, epoch)
+epoch = 50000
+alpha = 0.001
+final_theta, cost_data = logistic_regression(X, Y, theta, epoch, alpha=alpha)
 print(final_theta)
 print(cost_data[:5])
-plt.plot(data.iloc[0], (-final_theta[0, 0] - data.iloc[0] * final_theta[1, 0]) / final_theta[2,0])
+test = np.linspace(data['exam1 score'].min(), data['exam1 score'].max(), 100)
+#print(test)
+plt.plot(test, (-final_theta[0, 0] - test * final_theta[1, 0]) / final_theta[2, 0], color='blue')
 plt.figure()
 plt.plot(np.arange(epoch + 1).reshape(epoch + 1, 1), cost_data)
 
