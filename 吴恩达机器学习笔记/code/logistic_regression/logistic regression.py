@@ -13,7 +13,7 @@ def hypothesis(X, theta):
 
 #cost function
 def cost(X, Y, theta):
-    c_function = -Y.T.dot(np.log(hypothesis(X, theta))) - (1 - Y.T).dot(np.log(1 - hypothesis(X, theta)))
+    c_function = (-Y.T.dot(np.log(hypothesis(X, theta))) - (1 - Y.T).dot(np.log(1 - hypothesis(X, theta)))) / X.shape[0]
     return (1 / X.shape[0]) * c_function
 
 #gradient
@@ -43,6 +43,9 @@ def get_X(data):
 def get_Y(data):
     return np.array(data.iloc[:, -1]).reshape(data.shape[0], 1)
 
+#预测
+def predit(X, theta):
+    return (hypothesis(X, theta) >= 0.5)
 
 data = pd.read_csv('ex2data1.txt', names=['exam1 score', 'exam2 score', 'admission'])
 raw_data = data.copy()
@@ -71,7 +74,7 @@ print(hypothesis(X[1], theta))
 #cost function and gradient
 epoch = 50000
 alpha = 0.001
-final_theta, cost_data = logistic_regression(X, Y, theta, epoch, alpha=alpha)
+final_theta, cost_data = batch_gradient_decent(X, Y, theta, epoch, alpha=alpha)
 print(final_theta)
 print(cost_data[:5])
 test = np.linspace(data['exam1 score'].min(), data['exam1 score'].max(), 100)
@@ -79,5 +82,8 @@ test = np.linspace(data['exam1 score'].min(), data['exam1 score'].max(), 100)
 plt.plot(test, (-final_theta[0, 0] - test * final_theta[1, 0]) / final_theta[2, 0], color='blue')
 plt.figure()
 plt.plot(np.arange(epoch + 1).reshape(epoch + 1, 1), cost_data)
+
+print(predit(X[:5,:], final_theta).astype(int))
+print(Y[:5,:])
 
 plt.show()
