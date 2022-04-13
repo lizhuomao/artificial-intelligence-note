@@ -93,7 +93,7 @@ $\delta$实际上是代价函数对这些中间项的偏导, 他衡量的是，�
 
 将参数初始化为一个接近零的数
 
-**Training a neural network**
+## Training a neural network
 
 Pick a network architecture
 
