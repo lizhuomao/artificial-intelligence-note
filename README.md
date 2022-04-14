@@ -28,3 +28,5 @@ For this note, it contains Professor Andrew Ng course notes and the code impleme
 
 [course coding work](./吴恩达机器学习笔记/code/neural_network/)
 
+## Advice for applying machine learning
+
