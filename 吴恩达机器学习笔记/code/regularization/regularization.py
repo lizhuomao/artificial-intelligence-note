@@ -71,7 +71,7 @@ print(theta.shape)
 #print(cost(X, Y, theta, 1))
 #print(gradient(X, Y, theta, 1))
 
-epoch = 50000
+epoch = 5000
 alpha = 0.01
 #final_theta, cost_data = batch_gradient_decent(X, Y, theta, epoch, alpha, 0)
 #final_theta, cost_data = batch_gradient_decent(X, Y, theta, epoch, alpha, 100)
