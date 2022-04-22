@@ -37,3 +37,5 @@ For this note, it contains Professor Andrew Ng course notes and the code impleme
 ## Support Vector Machines
 
 [course note](./吴恩达机器学习笔记/markdown/Support_vector_machines.md)
+
+[course coding work](./吴恩达机器学习笔记/code/support_vector_machine/)
