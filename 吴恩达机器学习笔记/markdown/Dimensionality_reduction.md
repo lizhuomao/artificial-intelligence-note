@@ -54,15 +54,11 @@ Compute "covariance matrix":
 
 :notebook:*这里的$x^{(i)}$是减去均值处理过的数据所以乘以转置矩阵以后就是该矩阵的协方差， 协方差矩阵计算的是某一维度和其他不同维度的相关性， 概率统计中的协方差是协方差矩阵的二维情况，方差是一维情况*
 
-选择协方差中的前k个向量，就是对矩阵压缩到k维
-
 Compute "eigenvectors" of matrix $\Sigma$:
 
 U, S, V = svd(sigma)
 
 :notebook: *这里的svd函数是就行了奇异值分解，特征值分解是特殊的奇异值分解，奇异分解是计算非方阵时矩阵的特征向量。其中U是nxr的左奇异向量，r越接近于n，则相乘的结果越接近于A，r就是压缩后的维度*
-
-奇异值分解和协方差矩阵可以达到同样的效果
 
 ## Reconstruction from compressed representation
 
