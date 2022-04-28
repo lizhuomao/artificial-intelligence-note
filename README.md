@@ -52,3 +52,6 @@ For this note, it contains Professor Andrew Ng course notes and the code impleme
 
 [course coding work](./吴恩达机器学习笔记/code/dimensionality_reduction/)
 
+## Anomaly Detection
+
+[course note](./吴恩达机器学习笔记/markdown/Anomaly_detection.md)
