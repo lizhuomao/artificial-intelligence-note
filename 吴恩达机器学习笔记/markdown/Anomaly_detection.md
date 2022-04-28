@@ -130,11 +130,11 @@ $$
 
 - **Original model**
   - Manually create features to capture anomalies where $x_1,x_2$ take unusual combinations of values.
-  - Computationally cheaper(alternatively, scales better to large $n$)
+  - Computationally cheaper(alternatively, scales better to large $n$) 
   - OK even if $m$ (training set size) is small
 
 - Multivariate Gaussian
   - Automatically captures
   - correlations between features
   - Computationally more expensive
-  - Must have $m>n$ or else $\Sigma$ is non-invertible.
+  - Must have $m>n$ or else $\Sigma$ is non-invertible. $m\ge 10n$
