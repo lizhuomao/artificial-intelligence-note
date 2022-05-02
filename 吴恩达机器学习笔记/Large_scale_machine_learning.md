@@ -1,4 +1,4 @@
-# Large scale machine learning 
+# Large scale machine learning
 
 ## Learning with large datasets
 
