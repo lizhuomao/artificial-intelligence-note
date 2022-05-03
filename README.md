@@ -64,7 +64,10 @@ For this note, it contains Professor Andrew Ng course notes and the code impleme
 
 [course coding work](./吴恩达机器学习笔记/code/recommender_system/)
 
-## Large Scale machine learning 
+## Large Scale machine learning
 
 [course note](./吴恩达机器学习笔记/markdown/Large_scale_machine_learning.md)
 
+## Application example：Photo OCR
+
+[course note](./吴恩达机器学习笔记/markdown/Application_example_Photo_OCR.md)
