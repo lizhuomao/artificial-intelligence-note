@@ -6,6 +6,8 @@ Now, I have added the notes of Li Mu's deep learning course to this note.
 
  [course note](./李沐深度学习课程/)
 
+---
+
 For this note, it contains Professor Andrew Ng's course notes and the code implementation of course assignments.
 
 ## Linear Regression
